@@ -5,6 +5,13 @@
 ul{
     list-style: none;
 }
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+
+a{
+    text-decoration: none;
+}
 
 /* inline/inline-block  通过设置父元素的text-align:center */
 /* banner开始 */
@@ -18,8 +25,10 @@ ul{
     display: block;
     margin:0 auto;
 } */
+/* banner结束 */
 
 
+/* head */
 #headline{
     background: #f2f2f2;
     height: 40px;
@@ -30,21 +39,159 @@ ul{
 .wrapper{
     width: 1230px;
     height: 20px;
-    /* background: #ff0000; */
-    /* margin:0 auto; */
-    margin: auto;  
+    margin:0 auto;
+    /* div垂直居中 */
+    /* margin: auto;  
     position: absolute;  
-    top: 0; left: 0; bottom: 0; right: 0; 
+    top: 0; left: 0; bottom: 0; right: 0;  */
 }
 
-/* .head-login{
+.head-login{
+    /* 单行文字垂直居中 */
     height: 40px;
-    line-height: 40px;
-    font-weight: 12px;
-
-} */
+    line-height: 40px;      
+    font-size: 12px;
+    float: left;
+}
 
 .head-login span,.head-login a{
     color: #999999;
 }
-/* banner结束 */
+
+.head-login a{
+    /* 设置a元素的左内边距为20px */
+    padding-left:20px; 
+    
+}
+.head-login a:hover{
+    color: #FF0036;
+}
+/* head end */
+.header-list{
+    float: right;
+}
+.header-list li{
+    float: left;
+    /* line-height: 40px;
+    padding:0 15px 0 20px; */
+}
+
+.header-list li>a{
+    color: #999;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px 0 20px;
+}
+
+/* .header-list li a{
+    color:#999;
+} */
+
+
+/* .header-list li a:hover{
+    color: #FF0036;
+} */
+
+
+
+.icon-03f,.icon-tel{
+    color:#ff0036;
+    font-size: 14px;
+}
+/* .list-menu>a:hover{
+    background: #fff;
+    text-decoration: underline;
+    color: #ff0036;
+} */
+.list-menu:hover > a{
+    background: #fff;
+    text-decoration: underline;
+    color: #ff0036;
+}
+
+.list-menu-no:hover > a{
+    color: #999;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border:3px solid transparent;
+    border-top-color:#999;
+    position: absolute;
+    right:7px;
+    top:20px;
+    transition: transform 0.2s ease ;
+}
+.header-list .list-menu{
+    position: relative;
+}
+.header-list .list-menu:hover .arrow{
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
+.list-menu-no:hover > a{
+    color: #999;
+}
+
+
+.sub-list{
+    position: absolute;
+    left:0;
+    top:40px;
+    background: #fff;
+    border:1px solid #eee;
+    border-top:none;
+    padding: 10px 8px;
+    width: 74px;
+    line-height: 30px;
+    display: none;
+}
+.sub-list a{
+    color: #999;
+}
+.sub-list a:hover{
+    color: #ff0036;
+    text-decoration: underline;
+}
+.header-list .list-menu:hover .sub-list{
+    display: block;
+}
+/* header */
+#header{
+    height: 130px;
+}
+.headerLayout{
+    width: 1230px;
+    height: 106px;
+    /* background: red; */
+    margin:0 auto;
+}
+
+#search{
+    width: 491px;
+    height: 36px;
+    /* 使输入的字居中显示 */
+    /* text-align:center;*/
+    /* font: 16px/22px arial; 
+    box-sizing: border-box; */
+    border:none;
+    outline-style: solid;
+    outline-color: #ff0036;
+    
+}
+#search-button{
+    width: 132px;
+    height: 36px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background: #ff0036;
+    border:none;
+    outline-style: solid;
+    outline-color: #ff0036;
+}
+.iconfont{
+    
+}
