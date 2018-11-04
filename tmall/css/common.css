@@ -5,96 +5,91 @@
 ul{
     list-style: none;
 }
+a{
+    text-decoration: none;
+}
 body{
     font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
 }
 
-a{
-    text-decoration: none;
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 
 /* inline/inline-block  通过设置父元素的text-align:center */
 /* banner开始 */
-.banner{
+/* .banner{
     height: 80px;
     
     text-align: center;
     background:#ff2f7c;
+} */
+
+.banner{
+    text-align: center;
+    background:#ff2f7c;
 }
+.banner img{
+    display: block;
+    margin:0 auto;
+}
+.banner1{
+    display: block;
+    height: 80px;
+    background:#ff2f7c url(../images/banner.jpg) no-repeat center 0;
+}
+
 /* .banner img{
     display: block;
     margin:0 auto;
 } */
-/* banner结束 */
 
+
+/* banner结束 */
 
 /* head */
 #headline{
     background: #f2f2f2;
     height: 40px;
-    position: relative;
     box-shadow: 0 2px 4px 0px rgba(0,0,0,0.30);
-    
+    margin-bottom:5px;
 }
 .wrapper{
     width: 1230px;
-    height: 20px;
+    /* background: #ff0000; */
     margin:0 auto;
-    /* div垂直居中 */
-    /* margin: auto;  
-    position: absolute;  
-    top: 0; left: 0; bottom: 0; right: 0;  */
 }
-
-.head-login{
-    /* 单行文字垂直居中 */
+.header-login{
     height: 40px;
-    line-height: 40px;      
+    line-height: 40px;
     font-size: 12px;
     float: left;
 }
-
-.head-login span,.head-login a{
-    color: #999999;
+.header-login span,.header-login a{
+    color:#999;
 }
-
-.head-login a{
-    /* 设置a元素的左内边距为20px */
+.header-login a{
     padding-left:20px; 
-    
 }
-.head-login a:hover{
+.header-login a:hover{
     color: #FF0036;
 }
-/* head end */
 .header-list{
-    float: right;
+    float:right;
 }
-.header-list li{
-    float: left;
-    /* line-height: 40px;
-    padding:0 15px 0 20px; */
+.header-list>li{
+    float:left;
+    position: relative;
 }
-
-.header-list li>a{
+.header-list>li>a{
     color: #999;
     display: block;
     height: 40px;
     line-height: 40px;
     padding: 0 15px 0 20px;
 }
-
-/* .header-list li a{
-    color:#999;
-} */
-
-
-/* .header-list li a:hover{
-    color: #FF0036;
-} */
-
-
-
 .icon-03f,.icon-tel{
     color:#ff0036;
     font-size: 14px;
@@ -104,14 +99,15 @@ a{
     text-decoration: underline;
     color: #ff0036;
 } */
+.header-list .list-menu{
+    position: relative;
+}
 .list-menu:hover > a{
     background: #fff;
-    text-decoration: underline;
     color: #ff0036;
 }
-
-.list-menu-no:hover > a{
-    color: #999;
+.list-menu>a:hover{
+    text-decoration: underline;
 }
 .arrow{
     width: 0;
@@ -123,9 +119,6 @@ a{
     top:20px;
     transition: transform 0.2s ease ;
 }
-.header-list .list-menu{
-    position: relative;
-}
 .header-list .list-menu:hover .arrow{
     transform: rotate(180deg);
     transform-origin: 50% 25%;
@@ -133,8 +126,6 @@ a{
 .list-menu-no:hover > a{
     color: #999;
 }
-
-
 .sub-list{
     position: absolute;
     left:0;
@@ -142,10 +133,11 @@ a{
     background: #fff;
     border:1px solid #eee;
     border-top:none;
-    padding: 10px 8px;
+    padding: 10px 15px;
     width: 74px;
     line-height: 30px;
     display: none;
+
 }
 .sub-list a{
     color: #999;
@@ -157,41 +149,26 @@ a{
 .header-list .list-menu:hover .sub-list{
     display: block;
 }
-/* header */
-#header{
-    height: 130px;
+.sub-qr{
+    position: absolute;
+    left:-39px;
+    top:29px;
+    box-shadow:0 0 2px 2px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 1;
 }
-.headerLayout{
-    width: 1230px;
-    height: 106px;
-    /* background: red; */
-    margin:0 auto;
+.sub-qr::after{
+    content:'';
+    width:0;
+    height: 0;
+    border:4px solid transparent;
+    border-bottom-color:#fff;
+    position: absolute;
+    left:50%;
+    top:-8px;
+    margin-left:-4px;
+}
+.list-tel:hover .sub-qr{
+    display: block;
 }
 
-#search{
-    width: 491px;
-    height: 36px;
-    /* 使输入的字居中显示 */
-    /* text-align:center;*/
-    /* font: 16px/22px arial; 
-    box-sizing: border-box; */
-    border:none;
-    outline-style: solid;
-    outline-color: #ff0036;
-    
-}
-#search-button{
-    width: 132px;
-    height: 36px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    background: #ff0036;
-    border:none;
-    outline-style: solid;
-    outline-color: #ff0036;
-}
-.iconfont{
-    
-}
