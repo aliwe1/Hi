@@ -224,7 +224,7 @@
 /* 品牌闪购 */
 
 .brand-sale{
-    height: 500px;
+    height: 394px;
     /* background: pink; */
     margin-top:30px;      
 }
@@ -273,4 +273,65 @@
 }
 .brand-list-2 .brand-list-img img{
     width: 485px;
+}
+.more1{
+    line-height: normal;
+    /* 垂直对齐方式 */
+    vertical-align: 4px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* 赞助商 */
+/* .brand-ad{
+    height: 327px;
+    width: 1230px;
+    margin:0 auto;
+    background: red;
+} */
+.brand-item{
+    width: 122px;
+    height: 108px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    float: left;
+    position: relative; 
+    background: #fff;
+}
+.brand-pic{
+    padding-top:27px;
+    padding-bottom: 27px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background-color:#fff;
+}
+.brand-move{
+    width: 122px;
+    height: 108px;
+    position: absolute;
+    float: left;
+    text-align: center;
+    transition: all .3s ease-out;
+    background-color: rgba(0,0,0,.8);
+    opacity: 0;
+}
+.brand-item:hover .brand-move{
+    display: block;
+    opacity: 1;
+}
+.coupon{
+    line-height: 90px;
+    height: 60px;
+    color: #fff;
+}
+.enter{
+    width: 63px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 9px;
+    display: inline-block;
+    color: #fff;
+    background-color: #FF0036;
 }
