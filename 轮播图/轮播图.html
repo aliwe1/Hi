@@ -82,6 +82,7 @@
     </ul>
     <script src="jslib.js"></script>
     <script>
+        var oPrev = document.getElementById('prev');
         var oNext = document.getElementById('next');
         var oImgBox = document.getElementById('img-box');
         var oBtnBox = document.getElementById('btn-box');
@@ -89,6 +90,15 @@
         var aLi = oBtnBox.getElementsByTagName('li');
         var iNow = 0;
 
+        oPrev.onclick = function (){
+            iNow--;
+            if(iNow == -1){
+                oImgBox.style.left = -aImg[0].offsetWidth * (aImg.length-1) + 'px';
+                iNow = aImg.length-2;
+            }
+            change(iNow);
+        }
+        
         oNext.onclick = function() {
             iNow++;
             if(iNow == aImg.length){
@@ -106,9 +116,11 @@
             // 这个方法不用写px
              /*animate() 方法执行 CSS 属性集的自定义动画。*/
             // http://www.w3school.com.cn/tiy/t.asp?f=jquery_eff_ani_left
-            animate(oImgBox,{  
+            animate(oImgBox,{
                 left :-index *750 
-            })
+            });
+
+            // oImgBox.style.left = -index *750 +"px";
         }
     </script>
 </body>

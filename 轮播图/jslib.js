@@ -27,3 +27,11 @@ function animate(elem, attr, callback){
 		}
 	}, 30);
 }
+
+function getStyle(elem, attr){
+	if(elem.currentStyle){//IE
+		return elem.currentStyle[attr];
+	}else{
+		return getComputedStyle(elem, false)[attr];
+	}
+}
