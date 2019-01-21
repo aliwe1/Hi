@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">11111111</div>
+
+    <script src="jquery-1.12.4.js">//引入</script> 
+    <script>
+        // console.log( $('#div1')  );//√ jQuery.fn.init [div#div1, context: document, selector: "#div1"]
+
+
+        // console.log(document.getElementById('div1'));  //√ 
+        $div =  $('#div1');
+        // $div.css('background','#ff0036'); //√
+        // $div.style.background = "orange";   //×
+
+        var oDiv = document.getElementById('div1');
+        // oDiv.style.background = "green";  //√
+
+        /* 把jq对象 转换成原生对象
+            - $div.get(0)
+            - $div[0]
+           原生对象转化成jq
+            $(element)
+        */
+
+        // $div[0].innerHTML = "22222";
+        // console.log(  $div.get(0) );  //√  显示div1内容
+
+        // $(oDiv).html('234567890');
+
+
+        
+    
+    
+    
+    </script>
+
+
+    
+</body>
+</html>

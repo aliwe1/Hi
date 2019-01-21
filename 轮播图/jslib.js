@@ -1,6 +1,6 @@
 function animate(elem, attr, callback){
-	clearInterval(elem.timer);
-	elem.timer = setInterval(function(){
+	clearInterval(elem.timer);  //clearInterval() 方法可取消由 setInterval() 设置的 timeout。
+	elem.timer = setInterval(function(){ //setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
 		var bStop = true;//一个标识位，true代表可以停止定时器，false代表不可不停止
 		for(var prop in attr){//1:width
 			var curr = parseInt(getStyle(elem, prop));
