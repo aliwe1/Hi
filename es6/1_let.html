@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+    </ul>
+    <script>
+        //JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。
+        // JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。  
+        // JavaScript 只有声明的变量会提升，初始化的不会。
+
+        // 1.变量提升 变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部。
+        // console.log(a);
+        // var a = 5;
+        // let a = 5;
+
+
+        /* let 与 var区别 
+            1.let没有变量提升
+            2.块级作用域
+            3.不能重复声明
+            4.let暂时性死区 （临时失效区） 在当前作用域不允许有同名的变量进来
+        */
+
+        // for(let i = 0; i<5; i++){
+        //     console.log(i);
+        // }
+
+        // console.log(i);
+
+        // {
+        //     let x = 10;
+        // }
+        // console.log(x);
+
+        // if(true){
+        //     let a = 10;
+        // }
+
+        // console.log(a);
+
+        /*
+        var aLi = document.getElementsByTagName('li');
+        for(let i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i);
+            }
+        }
+        */
+        /* 
+           闭包：外部函数中有一个内部函数，内部函数引用外部函数中的局部变量 ，
+           使得这个外部函数中的局部变量不释放 ,一直可以访问
+           缺点 内存泄漏
+        */
+        // for(var i=0; i<aLi.length; i++){
+        //     (function(i){
+        //         aLi[i].onclick = function(){
+        //             console.log(i);
+        //         }
+        //     })(i)
+        // }
+
+        // let a = 10;
+        // a = 20;
+        // console.log(a);
+
+        // let暂时性死区 （临时失效区） 在当前作用域不允许有同名的变量进来
+        var a = 5  ;
+        function fn(){
+            console.log(a);
+            let a = 10;
+        }
+        fn();
+
+        
+        
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+        
+
+        
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+    </script>
+    
+</body>
+</html>

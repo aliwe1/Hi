@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-html</title>
+</head>
+<body>
+    <div id="app">
+        {{count}}
+        <button @click="count++;">click +1</button>
+        <button @click="add(2,$event)">click +2</button>   
+        <!-- $event ? -->
+        <button @click="add(2)">click +2</button>
+        <button v-on:click="add(3)">click +3</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                count:0
+            },
+            methods: {
+                add(num){
+                    console.log(event);
+                    // 通过this.count访问data 下的属性
+                    this.count+=num;
+                }
+            }
+        })
+    
+       
+    
+    </script>
+    
+</body>
+</html>

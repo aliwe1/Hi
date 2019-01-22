@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function* next_id() {
+            var x;   
+            for(x=1;x<100;x++){
+            yield x;
+            }
+        }
+
+        // 测试:
+        var
+            x,
+            pass = true,
+            g = next_id();
+        for (x = 1; x < 100; x ++) {
+            if (g.next().value !== x) {
+                pass = false;
+                console.log('测试失败!');
+                break;
+            }
+        }
+        if (pass) {
+            console.log('测试通过!');
+        }
+    </script>
+</body>
+</html>
