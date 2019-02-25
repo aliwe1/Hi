@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        
+        class Main extends React.Component {
+            constructor(params) {
+                super(params);
+                this.state = {
+                    todos:[
+                        {
+                            name:'吃饭',
+                            isActive:false
+                        },
+                        {
+                            name:'睡觉',
+                            isActive:false
+                        },
+                        {
+                            name:'敲代码',
+                            isActive:true
+                        }
+                    ]
+                }
+                this.addHandler = this.addHandler.bind(this);
+            }
+            addHandler(val){
+                // console.log('add')
+                let todos = [...this.state.todos];
+                todos.push({name:val,isActive:false});
+                this.setState({
+                    todos
+                })
+            }
+          render() {
+            return (
+                <div>
+                    <h1>todoList</h1>  
+                    <Search></Search>
+                    <Add addHandler={this.addHandler}></Add>
+                    <List todos={this.state.todos}></List>
+                </div>
+            )
+          }
+        }
+        class Search extends React.Component {
+            constructor(params) {
+                super(params);
+                this.search = this.search.bind(this);
+            }
+            search(){
+                
+            }
+            render() {
+            return (
+                <div>
+                    <span>搜索：</span>
+                    <input type="text"/>
+                    <button onClick={this.search}>添加</button>
+                </div>
+            )
+            }
+        }
+        class Add extends React.Component {
+            constructor(params) {
+                super(params);
+                this.add = this.add.bind(this);
+            }
+
+            add(){
+                this.props.addHandler( this.myInput.value );
+                // 清空输入框值
+                this.myInput.value = "";
+            }
+          render() {
+            return (
+                <div>
+                    <span>添加：</span>
+                    <input type="text" ref={input =>{ this.myInput = input}}/>
+                    <button onClick={this.add}>添加</button>
+                </div>
+            )
+          }
+        }
+        class List extends React.Component {
+          render() {
+            return (
+                <ul>
+                    {
+                        this.props.todos.map((task,index)=>{
+                            return (
+                                <li key={index} className={ task.isActive? 'active':''}>
+                                    <input type="checkbox" defaultChecked={task.isActive}/>
+                                    <span>{task.name}</span>
+                                    <button>删除</button>
+                                </li>
+                            )
+                        })
+                    }
+                    
+                </ul>
+            )
+          }
+        }
+        
+        
+        
+        
+        ReactDOM.render(<Main></Main>,document.getElementById('root'))
+    </script>
+
+</body>
+
+</html>

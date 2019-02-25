@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+
+    <!-- <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script> -->
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(params) {
+                super(params);
+                this.state = {
+                    num : 100,
+                    numA : 50,
+                    numB : 50
+                }
+                this.change = this.change.bind(this);
+            }
+            change(name){
+                if(this.state.num>=10){
+                    this.setState({
+                        num : this.state.num - 10,
+                        ['num'+name] : this.state['num'+name]+10,
+                    })
+                }else{
+                    alert('士兵数量不足')
+                }
+            }
+            render(){ 
+                return (
+                    <div>
+                        <h1>剩余士兵数量{ this.state.num }</h1>
+                        <JA name="A" num={this.state.numA} change = {this.change}/>
+                        <JA name="B" num={this.state.numB} change = {this.change}/>
+                    </div>
+                )
+            }
+        }
+
+        class JA extends React.Component{
+            
+            render(){ 
+                return (
+                    <div>
+                        <div>将军{this.props.name}士兵数量{ this.props.num }</div>
+                        <button onClick={()=>{
+                            this.props.change(this.props.name)
+                            }
+                        }>调兵</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Main></Main>,document.getElementById('root'))
+    </script>
+
+</body>
+</html>
